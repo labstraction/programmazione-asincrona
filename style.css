@@ -1,0 +1,18 @@
+.todo-title{
+font-weight: bold;
+font-size: x-large;
+}
+
+.todo-date{
+color: #515151;
+}
+
+.todo-li{
+    display: flex;
+    flex-direction: column;
+    border-style: solid ;
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 5px;
+
+}
