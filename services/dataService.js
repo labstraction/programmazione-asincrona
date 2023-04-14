@@ -10,7 +10,7 @@ class DataService {
 
     static getTodos() {
         return fetch('https://643693bf3e4d2b4a12d6050e.mockapi.io/todos')
-            .then(resp => resp.json())
+            .then(resp => resp.json());
     }
 
 
@@ -18,13 +18,17 @@ class DataService {
 
     // }
 
-    // static putTodo(todo){
+    static putTodo(todo){
 
-    // }
+        const jsonTodo = JSON.stringify(todo.toDbModel());
+        return fetch('https://643693bf3e4d2b4a12d6050e.mockapi.io/todos/' + todo.id, {method: 'PUT', body: jsonTodo, headers: {'content-type':'application/json'}})
+            .then(resp => resp.json());
+    }
 
-    // static deleteTodo(todo){
-
-    // }
+    static deleteTodo(todo){
+        return fetch('https://643693bf3e4d2b4a12d6050e.mockapi.io/todos/' + todo.id, {method: 'DELETE'})
+            .then(resp => resp.json());
+    }
 
 
 }
